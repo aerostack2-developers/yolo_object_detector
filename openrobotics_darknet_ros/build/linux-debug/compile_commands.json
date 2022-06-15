@@ -1,0 +1,42 @@
+[
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug",
+  "command": "/usr/bin/c++  -DDARKNET_ROS_BUILDING_DLL -DGPU=1 -DRCUTILS_ENABLE_FAULT_INJECTION -Dopenrobotics_darknet_ros_EXPORTS -I/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 -isystem /home/miguel/aerostack2_ws/install/darknet_vendor/include  -g -fPIC   -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/openrobotics_darknet_ros.dir/src/detector_network.cpp.o -c /home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/detector_network.cpp",
+  "file": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/detector_network.cpp"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug",
+  "command": "/usr/bin/c++  -DDARKNET_ROS_BUILDING_DLL -DGPU=1 -DRCUTILS_ENABLE_FAULT_INJECTION -Dopenrobotics_darknet_ros_EXPORTS -I/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 -isystem /home/miguel/aerostack2_ws/install/darknet_vendor/include  -g -fPIC   -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/openrobotics_darknet_ros.dir/src/parse.cpp.o -c /home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/parse.cpp",
+  "file": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/parse.cpp"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug",
+  "command": "/usr/bin/c++  -DGPU=1 -DRCUTILS_ENABLE_FAULT_INJECTION -I/opt/ros/galactic/src/gtest_vendor/include -I/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 -isystem /home/miguel/aerostack2_ws/install/darknet_vendor/include  -g   -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/test_parser.dir/test/test_parser.cpp.o -c /home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/test/test_parser.cpp",
+  "file": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/test/test_parser.cpp"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug",
+  "command": "/usr/bin/c++  -DGPU=1 -DRCUTILS_ENABLE_FAULT_INJECTION -I/opt/ros/galactic/src/gtest_vendor/include -I/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 -isystem /home/miguel/aerostack2_ws/install/darknet_vendor/include  -g   -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/test_detector_network.dir/test/test_detector_network.cpp.o -c /home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/test/test_detector_network.cpp",
+  "file": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/test/test_detector_network.cpp"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug",
+  "command": "/usr/bin/c++  -DDARKNET_ROS_NODE_BUILDING_DLL -DDEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -DGPU=1 -DRCUTILS_ENABLE_FAULT_INJECTION -Ddetector_node_EXPORTS -I/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 -isystem /home/miguel/aerostack2_ws/install/darknet_vendor/include  -g -fPIC   -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/detector_node.dir/src/detector_node.cpp.o -c /home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/detector_node.cpp",
+  "file": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/detector_node.cpp"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug",
+  "command": "/usr/bin/c++  -DDEFAULT_RMW_IMPLEMENTATION=rmw_cyclonedds_cpp -DGPU=1 -DRCUTILS_ENABLE_FAULT_INJECTION -I/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/include -isystem /opt/ros/galactic/include -isystem /usr/include/opencv4 -isystem /home/miguel/aerostack2_ws/install/darknet_vendor/include  -g   -Wall -Wextra -Wpedantic -std=gnu++17 -o CMakeFiles/detector_node_main.dir/src/detector_node_main.cpp.o -c /home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/detector_node_main.cpp",
+  "file": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/src/detector_node_main.cpp"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug/gtest",
+  "command": "/usr/bin/c++   -I/opt/ros/galactic/src/gtest_vendor/include -I/opt/ros/galactic/src/gtest_vendor/.  -g   -Wall -Wextra -Wpedantic -std=gnu++14 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /opt/ros/galactic/src/gtest_vendor/src/gtest_main.cc",
+  "file": "/opt/ros/galactic/src/gtest_vendor/src/gtest_main.cc"
+},
+{
+  "directory": "/home/miguel/aerostack2_ws/src/aerostack2/stack_devel/openrobotics_darknet_ros/build/linux-debug/gtest",
+  "command": "/usr/bin/c++   -I/opt/ros/galactic/src/gtest_vendor/include -I/opt/ros/galactic/src/gtest_vendor/.  -g -fPIC   -Wno-missing-field-initializers -Wall -Wextra -Wpedantic -Wno-null-dereference -std=gnu++14 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /opt/ros/galactic/src/gtest_vendor/src/gtest-all.cc",
+  "file": "/opt/ros/galactic/src/gtest_vendor/src/gtest-all.cc"
+}
+]
