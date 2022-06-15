@@ -1,3 +1,1 @@
-# Controller_plugin_base
-
-
+# Yolo object detector wrapper
