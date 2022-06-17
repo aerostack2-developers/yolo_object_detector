@@ -39,7 +39,7 @@ def get_yolo_params(context, *args, **kwargs):
         executable='detector_node',
         namespace=LaunchConfiguration('drone_id'),
         parameters=[tmp_filename],
-        remappings=[('detector_node/images', 'sensor_measurement/front_camera')],
+        remappings=[('detector_node/images', 'sensor_measurements/front_camera')],
         output='screen',
         emulate_tty=True
     )

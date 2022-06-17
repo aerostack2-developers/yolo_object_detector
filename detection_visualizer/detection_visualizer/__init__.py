@@ -1,4 +1,4 @@
-# Copyright 2019 Open Source Robotics Foundation, Inc.
+# Copyright 2019 Open Sourcsesee Robotics Foundation, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -42,18 +42,28 @@ class DetectionVisualizerNode(Node):
 
         self._image_pub = self.create_publisher(Image, '~/dbg_images', output_image_qos)
 
-        self._image_sub = message_filters.Subscriber(self, Image, '~/images')
-        self._detections_sub = message_filters.Subscriber(self, Detection2DArray, '~/detections')
+        
 
-        self._synchronizer = message_filters.ApproximateTimeSynchronizer(
-            (self._image_sub, self._detections_sub), 5, 0.01)
-        self._synchronizer.registerCallback(self.on_detections)
+        # self._image_sub = message_filters.Subscriber(self, Image, '~/images')
+        self._image_sub = self.create_subscription(Image, '~/images', self.on_image, QoSProfile(depth=1))
+        # self._detections_sub = message_filters.Subscriber(self, Detection2DArray, '~/detections')
+        self._detections_sub = self.create_subscription(Detection2DArray, '~/detections', self.on_detections, QoSProfile(depth=1))
 
-    def on_detections(self, image_msg, detections_msg):
+        # self._synchronizer = message_filters.ApproximateTimeSynchronizer(
+        #     (self._image_sub, self._detections_sub), 5, 0.01, allow_headerless=True)
+        # self._synchronizer.registerCallback(self.on_detections)
+
+        self.detections_ = []
+
+    def on_detections(self, detections_msg):
+        self.detections_ = detections_msg.detections
+        
+
+    def on_image(self, image_msg):
         cv_image = self._bridge.imgmsg_to_cv2(image_msg)
 
         # Draw boxes on image
-        for detection in detections_msg.detections:
+        for detection in self.detections_:
             max_class = None
             max_score = 0.0
             for hypothesis in detection.results:
@@ -72,8 +82,9 @@ class DetectionVisualizerNode(Node):
 
             min_pt = (round(cx - sx / 2.0), round(cy - sy / 2.0))
             max_pt = (round(cx + sx / 2.0), round(cy + sy / 2.0))
-            color = (0, 255, 0)
-            thickness = 1
+            color = (0, 127, 255) # bgr
+
+            thickness = 3
             cv2.rectangle(cv_image, min_pt, max_pt, color, thickness)
 
             label = '{} {:.3f}'.format(max_class, max_score)
@@ -81,6 +92,7 @@ class DetectionVisualizerNode(Node):
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(cv_image, label, pos, font, 0.75, color, 1, cv2.LINE_AA)
             
+        self.detections_=[]
         detection_image_msg = self._bridge.cv2_to_imgmsg(cv_image, encoding="rgb8")
         detection_image_msg.header = image_msg.header
 
