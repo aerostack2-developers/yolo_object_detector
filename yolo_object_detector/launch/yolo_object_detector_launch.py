@@ -32,6 +32,7 @@ def get_yolo_params(context, *args, **kwargs):
         config_params["/**"]["ros__parameters"]["network"]['config'] = path_dict['config_path']
         config_params["/**"]["ros__parameters"]["network"]['weights'] = path_dict['weight_path']
         config_params["/**"]["ros__parameters"]["network"]['class_names'] = path_dict['class_name_path']
+        config_params["/**"]["ros__parameters"]["use_sim_time"] = bool( LaunchConfiguration('use_sim_time').perform(context))
         yaml.dump(config_params, f)
 
     camera_topic = LaunchConfiguration('camera_topic').perform(context)
@@ -57,6 +58,7 @@ def generate_launch_description():
 
     ld = LaunchDescription([
         DeclareLaunchArgument('drone_id', default_value=EnvironmentVariable('AEROSTACK2_SIMULATION_DRONE_ID')),
+        DeclareLaunchArgument('use_sim_time', default_value='false'),
         DeclareLaunchArgument('config', default_value=config),
         DeclareLaunchArgument('camera_topic', default_value='sensor_measurements/front_camera/image_raw'),
         OpaqueFunction(function=get_yolo_params)
