@@ -36,13 +36,15 @@ def get_yolo_params(context, *args, **kwargs):
         yaml.dump(config_params, f)
 
     camera_topic = LaunchConfiguration('camera_topic').perform(context)
+    detections_topic = LaunchConfiguration('detections_topic').perform(context)
 
     node = Node(
         package='openrobotics_darknet_ros',
         executable='detector_node',
         namespace=LaunchConfiguration('drone_id'),
         parameters=[tmp_filename],
-        remappings=[('detector_node/images', camera_topic)],
+        remappings=[('detector_node/images', camera_topic),
+                    ('detector_node/detections', detections_topic)],
         output='screen',
         emulate_tty=True
     )
@@ -61,6 +63,7 @@ def generate_launch_description():
         DeclareLaunchArgument('use_sim_time', default_value='false'),
         DeclareLaunchArgument('config', default_value=config),
         DeclareLaunchArgument('camera_topic', default_value='sensor_measurements/front_camera/image_raw'),
+        DeclareLaunchArgument('detections_topic', default_value='detector_node/detections'),
         OpaqueFunction(function=get_yolo_params)
     ])
 
